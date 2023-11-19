@@ -32,32 +32,32 @@ const Produtos = () => {
       <div className={styles.initContent + ' animeLeft'}>
         <MuralDeImagens />
       </div>
-      <button
-        className={styles.pizza}
-        onClick={() => {
-          setChosen('pizzas');
-        }}
-      >
-        Pizzas
-      </button>
-
-      <button
-        className={styles.apr}
-        onClick={() => {
-          setChosen('aperitivos');
-        }}
-      >
-        Aperitivos
-      </button>
-
-      <button
-        className={styles.clz}
-        onClick={() => {
-          setChosen('calzones');
-        }}
-      >
-        Calzones
-      </button>
+      <span className={styles.buttons + ' animeLeft'}>
+        <button
+          style={{ backgroundColor: '#bb0000', marginLeft: '2.5rem' }}
+          onClick={() => {
+            setChosen('pizzas');
+          }}
+        >
+          Pizzas
+        </button>
+        <button
+          style={{ backgroundColor: '#ffaa00' }}
+          onClick={() => {
+            setChosen('aperitivos');
+          }}
+        >
+          Aperitivos
+        </button>
+        <button
+          style={{ backgroundColor: ' #00c000' }}
+          onClick={() => {
+            setChosen('calzones');
+          }}
+        >
+          Calzones
+        </button>
+      </span>
 
       <section className={styles.content + ' animeLeft'}>
         <Head title="DEM - Cardápio" decription="Cardapio do site dem" />

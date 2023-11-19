@@ -2,7 +2,6 @@
    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
  .initContent {
   margin-top: 10vh;
-  height: 60%;
  }
 
  .initContent img {
@@ -10,41 +9,16 @@
   height: 70vh;
   overflow: hidden;
  }
-.pizza {
-  display: inline-block;
-  padding: 0.8rem;
-  margin-left: 2.5rem;
-background: #bb0000;
-color: white;
-  font-family: Oswald;
-  font-size: 1.2rem;
-  border-radius: .2rem;
-  border: none;
-  cursor: pointer;
+
+.buttons {
+ display: flex;
+  display: block;
+  margin-top: 4rem;
 }
-.apr {
-  margin-top: 7.5rem;
-  display: inline-block;
-  padding: 0.8rem;
-background: #ffaa00;
-color: white;
-  font-family: Oswald;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: .2rem;
-  cursor: pointer;
-}
-.clz {
-  margin-top: 7.5rem;
-  display: inline-block;
-  padding: 0.8rem;
-  background: #00c000;
-color: white;
-  font-family: Oswald;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: .2rem;
-  cursor: pointer;
+.buttons button {
+font-family: Oswald;
+width: 8rem;
+border-radius: 4px;
 }
 
 .clz:hover {
@@ -98,10 +72,10 @@ max-height: 10fr;
 }
 
 .produtos img {
-  width: 100%;
+  width: 15rem;
+  height: 15rem;
   border-radius: 0.4rem;
   box-shadow: 0 0px 4px #ccc;
-  scale: 1;
 }
 
 @keyframes scaleBox {
@@ -149,18 +123,32 @@ font-family: Oswald;
 .content {
   justify-content: center;
 }
-.pizza {
-  margin-left: 20vw;
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-right: 2.5rem;
 }
+.buttons button {
+  width: 8.6rem;
+}
+
+
 
  }
 
 
- @media only screen and (max-width: 320px) {
+ @media only screen and (max-width: 468px) {
   .initContent {
     margin-top: 11vh;
   }
   .initContent img {
     scale: 1.2;
   }
+  .buttons {
+    margin-top: 8rem;
+  }
+  .buttons button {
+    width: 6.5rem;
+  }
+
  }
