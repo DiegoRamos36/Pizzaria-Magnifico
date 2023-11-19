@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+footer {
+  margin-top: 15rem;
+  background:  #CD2E3A;
+  color: #fff;
+  padding: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rodapeContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.rodapeLogo img {
+  width: 10rem;
+  height: auto;
+}
+
+.rodapeInfo p {
+  font-family: Poppins;
+  color: white;
+  margin: 5px 0;
+}
+
+.rodapeSocial a {
+  margin-right: 1rem;
+}
+
+.rodapeSocial a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .rodapeInfo {
+    font-size: .8rem;
+  }
+  .rodapeLogo img {
+    width: 5rem;
+  }
+  .rodapeSocial {
+    scale: 0.8;
+  }
+}

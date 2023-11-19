@@ -1,0 +1,88 @@
+.mainContent {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.preContent {
+  display: flex;
+  margin-top: 3rem;
+  margin-bottom: 5rem; /* Reduzi a margem inferior */
+  margin-left: 2rem;
+}
+
+.preContent img {
+  margin: 1rem; /* Reduzi a margem da imagem */
+  border-radius: 0.35rem;
+  width: 70vw;
+  height: 80vh;
+  box-shadow: 0.2rem 0.2rem 0.2rem #aaa;
+}
+
+.preContent p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem; 
+  margin: 1rem; 
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.destaque {
+  color: #000;
+  font-weight: bold;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem; /* Reduzi a margem superior */
+  width: 90%; /* Ajustei a largura para 90% da largura do contêiner pai */
+  max-width: 400px; /* Adicionei uma largura máxima */
+  height: 25rem; /* Reduzi a altura */
+  margin: 1rem;
+  background-color: #E0CBA9;
+  border-radius: 2%;
+  box-shadow: 0 0 0.2rem #aaa;
+}
+
+.contents img {
+  margin: 1rem; /* Reduzi a margem da imagem */
+  width: 50%; /* Ajustei a largura para 80% */
+}
+
+.contents p {
+  color: #262626;
+  font-family: Oswald;
+  font-size: 100%; /* Reduzi o tamanho da fonte */
+}
+
+@media only screen and (max-width: 768px) {
+.preContent {
+  flex-direction: column;
+  margin-top: 10vh;
+  align-items: center;
+}
+.preContent img {
+  width: 90vw;
+  height: 60vh;
+}
+.preContent p {
+  max-width: 100%;
+}
+
+
+}

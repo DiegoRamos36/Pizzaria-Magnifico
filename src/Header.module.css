@@ -1,0 +1,98 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 12%;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  background: linear-gradient(180deg, #009246 -136.79%, #54C50A 190.71%, #5AFF15 190.71%);
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+  width: 30rem;
+  margin-right: 10rem;
+  align-items: center;
+}
+
+.icons a {
+color: white;
+text-decoration: none;
+font-family: Bebas Neue;
+font-size: 2rem;
+padding: 0.6rem;
+border-radius: 4px;
+}
+
+.icons a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.local {
+  border-radius: 50%;
+  padding: 0.8rem 0.8rem;
+  cursor: pointer;
+}
+
+
+
+
+.titulo {
+  position: relative;
+  margin-left: 10rem;
+  cursor: pointer;
+}
+
+.titulo img {
+ width: 20vh;
+}
+
+
+.burger {
+  color: white;
+  display: none;
+  
+}
+
+.localResp {
+  display: none;
+  color: black;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+ .burger {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 2.5rem;
+ }
+ .icons {
+  display: none;
+ }
+ .titulo {
+  margin-left: 2rem;
+ }
+ .localResp {
+  display: block;
+}
+}
+
+
+@media only screen and (max-width: 468px) {
+  .titulo img {   
+    width: 15vh;
+  }
+}
+
+
+

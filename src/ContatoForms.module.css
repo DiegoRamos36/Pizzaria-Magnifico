@@ -1,0 +1,55 @@
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+}
+
+
+h1 {
+font-size: 2rem;
+color: white;
+}
+
+
+label {
+  color: #262626;
+  font-weight: bold;
+  font-size: 1.4rem;
+  display: block;
+
+}
+
+input {
+width: 20vw;
+height: 3.5vh;
+}
+
+button {
+  font-size: 1.4rem;
+  background: #666;
+  color: #eee;
+  padding: 0.4rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.mensagem {
+  height: 15vh;
+}
+
+
+@media only screen and (max-width: 768px) {
+  input {
+    width: 70vw;
+  }
+  label {
+    font-size: 1.2rem;
+  }
+
+  .button {
+    padding: .4vh 0.6vw;
+  }
+}

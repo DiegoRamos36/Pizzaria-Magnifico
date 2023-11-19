@@ -1,0 +1,112 @@
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  width: 30vw;
+  height: 35rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modalContent img {
+  margin-bottom: 0.8rem;
+  width: 10vw;
+  height: 10vh;
+}
+
+
+.close {
+
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 3rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+.close:hover {
+background: rgba(0, 0, 0, 0.3);
+border-radius: 50%;
+}
+
+.fields {
+  text-align: left;
+}
+
+.fields p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: Poppins;
+
+}
+
+.fields input {
+
+  width: 30vw;
+  height: 1.5rem;
+
+}
+
+.confirmar {
+
+  background: #333;
+  color: white;
+  border: none;
+  font-family: Poppins;
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.4rem 1rem;
+cursor: pointer;
+margin-top: 1rem;
+}
+
+.confirmar:hover {
+  background-color: #222;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  .modalContent {
+    height: 90vh;
+    width: 80vw;
+  }
+  .modalContent img {
+    width: 30vw;
+    height: 20vh
+  }
+h2 {
+  font-size: 2rem;
+}
+  .fields  input {
+    width: 70vw;
+   }
+}
+
+@media only screen and (max-width: 468px) {
+
+}
+
