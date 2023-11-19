@@ -21,14 +21,14 @@ const Contato = () => {
           </li>
           <li>
             <img
-              src="https://github.com/DiegoRamos36/Dom-El-Magnifico/blob/master/src/Img/x.png?raw=true"
+              src="https://github.com/DiegoRamos36/Pizzaria-Magnifico/blob/main/src/Img/x.png?raw=true"
               alt=""
             />{' '}
             <NavLink to="">@DomElMagnifico</NavLink>
           </li>
           <li>
             <img
-              src="https://github.com/DiegoRamos36/Dom-El-Magnifico/blob/master/src/Img/linkedin.png?raw=true"
+              src="https://github.com/DiegoRamos36/Pizzaria-Magnifico/blob/main/src/Img/linkedin.png?raw=true"
               alt=""
             />
             <NavLink to="">Diego Ramos</NavLink>
