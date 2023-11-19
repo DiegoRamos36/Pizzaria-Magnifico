@@ -69,7 +69,7 @@ const Local = ({ attInfoModal }) => {
         }}
       >
         <img
-          src="https://raw.githubusercontent.com/DiegoRamos36/Dom-El-Magnifico/ef736c42c74d4d1686ca66058c5923b1a41c24ed/src/Img/local.svg"
+          src="https://raw.githubusercontent.com/DiegoRamos36/Pizzaria-Magnifico/63174490f689ce1ac356613221b3388df9132ea1/src/Img/local.svg"
           style={{ height: '35px', width: '35px' }}
           alt=""
         />
@@ -79,7 +79,7 @@ const Local = ({ attInfoModal }) => {
   return (
     <div>
       <img
-        src="https://raw.githubusercontent.com/DiegoRamos36/Dom-El-Magnifico/ef736c42c74d4d1686ca66058c5923b1a41c24ed/src/Img/localAdd.svg"
+        src="https://raw.githubusercontent.com/DiegoRamos36/Pizzaria-Magnifico/63174490f689ce1ac356613221b3388df9132ea1/src/Img/localAdd.svg"
         style={{ height: '35px', width: '35px' }}
         alt=""
         onClick={openModal}
@@ -93,7 +93,7 @@ const Local = ({ attInfoModal }) => {
             </span>
             <span>
               <img
-                src="https://raw.githubusercontent.com/DiegoRamos36/Dom-El-Magnifico/ef736c42c74d4d1686ca66058c5923b1a41c24ed/src/Img/motoboy.svg"
+                src="https://raw.githubusercontent.com/DiegoRamos36/Pizzaria-Magnifico/63174490f689ce1ac356613221b3388df9132ea1/src/Img/motoboy.svg"
                 alt=""
               />
               <h2>Onde levaremos a felicidade?</h2>

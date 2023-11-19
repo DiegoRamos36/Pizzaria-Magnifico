@@ -38,7 +38,7 @@ const Sobre = () => {
         <div className={styles.contents + ' animeLeft'}>
           <div className={styles.background + ' animeLeft'}>
             <img
-              src="https://raw.githubusercontent.com/DiegoRamos36/Dom-El-Magnifico/ef736c42c74d4d1686ca66058c5923b1a41c24ed/src/Img/queijo.svg"
+              src="https://raw.githubusercontent.com/DiegoRamos36/Pizzaria-Magnifico/63174490f689ce1ac356613221b3388df9132ea1/src/Img/queijo.svg"
               alt=""
             />
             <p>
@@ -55,7 +55,7 @@ const Sobre = () => {
         <div className={styles.contents + ' animeLeft'}>
           <div className={styles.background + ' animeLeft'}>
             <img
-              src="https://raw.githubusercontent.com/DiegoRamos36/Dom-El-Magnifico/ef736c42c74d4d1686ca66058c5923b1a41c24ed/src/Img/tomate.svg"
+              src="https://raw.githubusercontent.com/DiegoRamos36/Pizzaria-Magnifico/63174490f689ce1ac356613221b3388df9132ea1/src/Img/tomate.svg"
               alt=""
             />
             <p>
@@ -71,7 +71,7 @@ const Sobre = () => {
         <div className={styles.contents + ' animeLeft'}>
           <div className={styles.background + ' animeLeft'}>
             <img
-              src="https://raw.githubusercontent.com/DiegoRamos36/Dom-El-Magnifico/ef736c42c74d4d1686ca66058c5923b1a41c24ed/src/Img/alface.svg"
+              src="https://raw.githubusercontent.com/DiegoRamos36/Pizzaria-Magnifico/63174490f689ce1ac356613221b3388df9132ea1/src/Img/alface.svg"
               alt=""
             />
             <p>
