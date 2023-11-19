@@ -22,15 +22,15 @@ border-radius: 4px;
 }
 
 .clz:hover {
-  background: #00f000;
+  background:  #00f000;
 }
 
 .apr:hover{
-  background-color:  #eeee00;
+  background:  #eeee00;
   color: #aaa;
 }
 .pizza:hover {
- background:  #ff0000;
+ background:   #ff0000;
 }
 
 
@@ -136,16 +136,26 @@ font-family: Oswald;
 
  }
 
+ @media only screen and (max-width: 600px ) {
+  .initContent img {
+  height: 40vh;
+  }
+  .buttons {
+    margin-top: 2rem;
+  }
+ }
+
 
  @media only screen and (max-width: 468px) {
   .initContent {
     margin-top: 11vh;
   }
+  
   .initContent img {
-    scale: 1.2;
+    height: 50vw;
   }
   .buttons {
-    margin-top: 8rem;
+    margin-top: 2rem;
   }
   .buttons button {
     width: 6.5rem;

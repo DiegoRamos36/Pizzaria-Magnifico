@@ -8,6 +8,9 @@ const Produtos = () => {
   const [dados, setDados] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [chosen, setChosen] = React.useState('pizzas');
+  const [hoveredPzz, setHoveredPzz] = React.useState(false);
+  const [hoveredApr, setHoveredApr] = React.useState(false);
+  const [hoveredClz, setHoveredClz] = React.useState(false);
   React.useEffect(() => {
     fetch(
       `https://magnificosdb-2debd-default-rtdb.firebaseio.com/${chosen}.json`,
@@ -34,26 +37,47 @@ const Produtos = () => {
       </div>
       <span className={styles.buttons + ' animeLeft'}>
         <button
-          style={{ backgroundColor: '#bb0000', marginLeft: '2.5rem' }}
           onClick={() => {
             setChosen('pizzas');
+          }}
+          onMouseOver={() => {
+            setHoveredPzz(true);
+          }}
+          onMouseOut={() => {
+            setHoveredPzz(false);
+          }}
+          style={{
+            backgroundColor: hoveredPzz ? '#ff0000' : '#bb0000',
+            marginLeft: '2.5rem',
           }}
         >
           Pizzas
         </button>
         <button
-          style={{ backgroundColor: '#ffaa00' }}
           onClick={() => {
             setChosen('aperitivos');
           }}
+          onMouseOver={() => {
+            setHoveredApr(true);
+          }}
+          onMouseOut={() => {
+            setHoveredApr(false);
+          }}
+          style={{ backgroundColor: hoveredApr ? '#eeee00' : '#ffaa00' }}
         >
           Aperitivos
         </button>
         <button
-          style={{ backgroundColor: ' #00c000' }}
           onClick={() => {
             setChosen('calzones');
           }}
+          onMouseOver={() => {
+            setHoveredClz(true);
+          }}
+          onMouseOut={() => {
+            setHoveredClz(false);
+          }}
+          style={{ backgroundColor: hoveredClz ? '#00ff00' : '#00c000' }}
         >
           Calzones
         </button>
