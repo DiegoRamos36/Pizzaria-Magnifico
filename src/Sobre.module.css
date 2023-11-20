@@ -1,88 +1,136 @@
-.mainContent {
-  margin-top: 5%;
-  display: flex;
-  flex-direction: column;
-}
-
-.preContent {
-  display: flex;
-  margin-top: 3rem;
-  margin-bottom: 5rem; /* Reduzi a margem inferior */
-  margin-left: 2rem;
-}
-
-.preContent img {
-  margin: 1rem; /* Reduzi a margem da imagem */
-  border-radius: 0.35rem;
-  width: 70vw;
-  height: 80vh;
-  box-shadow: 0.2rem 0.2rem 0.2rem #aaa;
-}
-
-.preContent p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.4rem; 
-  margin: 1rem; 
-}
-
-.background {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
-}
-
-.destaque {
-  color: #000;
-  font-weight: bold;
-}
-
-.cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.contents {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem; /* Reduzi a margem superior */
-  width: 90%; /* Ajustei a largura para 90% da largura do contêiner pai */
-  max-width: 400px; /* Adicionei uma largura máxima */
-  height: 25rem; /* Reduzi a altura */
-  margin: 1rem;
-  background-color: #E0CBA9;
-  border-radius: 2%;
-  box-shadow: 0 0 0.2rem #aaa;
-}
-
-.contents img {
-  margin: 1rem; /* Reduzi a margem da imagem */
-  width: 50%; /* Ajustei a largura para 80% */
-}
-
-.contents p {
-  color: #262626;
-  font-family: Oswald;
-  font-size: 100%; /* Reduzi o tamanho da fonte */
-}
-
-@media only screen and (max-width: 768px) {
-.preContent {
-  flex-direction: column;
+.content {
   margin-top: 10vh;
+}
+
+.firstContent {
+  background: url('https://th.bing.com/th/id/OIG.auA8piirumkR6lG66dYN?pid=ImgGn');
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.firstContent h1 {
+ font-size: 20vw;
+background: rgba(0, 0, 0, 0.3);
+padding: 2vw;
+border-radius: 4vw;
+
+}
+
+.secondContent {
+  display: flex;
+  flex-direction: column;
+  height: 50vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 2vw;
   align-items: center;
 }
-.preContent img {
-  width: 90vw;
-  height: 60vh;
+
+.secondContent h4 {
+  font-size: 2.3vw;
+  color: #444;
+  font-weight: normal;
+  font-family: Oswald;
+  line-height: 1.2;
 }
-.preContent p {
-  max-width: 100%;
+
+.thirdContent {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thirdContent img {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+}
+.thirdContent h1 {
+  font-size: 20vw;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2vw;
+  border-radius: 4vw;
+}
+
+.fourthContent {
+  display: flex;
+  flex-direction: column;
+  height: 50vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 2vw;
+  align-items: center;
+}
+.fourthContent h4 {
+  font-size: 2.3vw;
+  color: #444;
+  font-weight: normal;
+  font-family: Oswald;
+  line-height: 1.2;
+}
+
+.lastContent {
+  background: url('https://img.freepik.com/fotos-premium/bandeira-da-italia-em-uma-superficie-de-madeira-velha_314149-1354.jpg?w=2000');
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -15rem;
+}
+
+.lastContent h1 {
+  font-size: 20vw;
+ background: rgba(0, 0, 0, 0.3);
+ padding: 2vw;
+ border-radius: 4vw;
+ }
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .secondContent h4 {
+    font-size: 1rem;
+ 
+  }
+  .secondContent {
+    margin-bottom: 20rem;
+  }
+
+  .fourthContent h4 {
+    font-size: 1rem;
+ 
+  }
+  .fourthContent {
+    margin-top: 2rem;
+    margin-bottom: 12rem;
+  }
+}
+
+@media only screen and (max-width: 468px ) {
+  .secondContent h4 {
+    font-size: 3vw;
+
+  }
+  .secondContent {
+    margin-bottom: 10rem;
+  }
+  .fourthContent h4 {
+    font-size: 3vw;
+  }
 }
 
 
-}
