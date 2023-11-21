@@ -64,7 +64,7 @@ const Produto = ({ logado, setLogado, chosen, infoModal }) => {
               className={styles.comprar}
               onClick={enviarMensagem}
             >
-              Pedir
+              Pedir Separadamente
             </button>
             <Link to={'/'} className={styles.voltar}>
               Voltar

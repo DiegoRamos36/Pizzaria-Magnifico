@@ -21,7 +21,7 @@ const App = () => {
         <Header attInfoModal={attInfoModal} />
         <div className="content">
           <Routes>
-            <Route path="/" element={<Produtos />} />
+            <Route path="/" element={<Produtos infoModal={infoModal} />} />
             <Route
               path="pizzas/:id"
               element={<Produto infoModal={infoModal} chosen={'pizzas'} />}
@@ -33,6 +33,10 @@ const App = () => {
             <Route
               path="calzones/:id"
               element={<Produto infoModal={infoModal} chosen={'calzones'} />}
+            />
+            <Route
+              path="bebidas/:id"
+              element={<Produto infoModal={infoModal} chosen={'bebidas'} />}
             />
             <Route path="contato" element={<Contato />} />
             <Route path="sobre" element={<Sobre />} />
