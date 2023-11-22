@@ -4,8 +4,9 @@ import Head from './Head';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import MuralDeImagens from './MuralDeImagens';
+import Carrinho from './Carrinho';
 
-const Produtos = ({ infoModal }) => {
+const Produtos = ({ infoModal, adicionarAoCarrinho, carrinho }) => {
   const [dados, setDados] = React.useState(null);
   const [loading, setLoading] = React.useState(true);
   const [chosen, setChosen] = React.useState('pizzas');
@@ -13,61 +14,16 @@ const Produtos = ({ infoModal }) => {
   const [hoveredApr, setHoveredApr] = React.useState(false);
   const [hoveredClz, setHoveredClz] = React.useState(false);
   const [hoveredBB, setHoveredBB] = React.useState(false);
-  const [carrinho, setCarrinho] = React.useState([]);
-  const [accordeon, setAccordeon] = React.useState(false);
+  const [quantidadesNoCarrinho, setQuantidadesNoCarrinho] = React.useState({});
 
-  const adicionarAoCarrinho = (produto) => {
-    const produtoExistente = carrinho.find(
-      (item) => item.id === produto.id && item.tipo === produto.tipo,
-    );
-    if (produtoExistente) {
-      const novoCarrinho = carrinho.map((item) =>
-        item.id === produto.id && item.tipo === produto.tipo
-          ? { ...item, quantidade: item.quantidade + 1 }
-          : item,
-      );
-      setCarrinho(novoCarrinho);
-    } else {
-      setCarrinho([...carrinho, { ...produto, quantidade: 1 }]);
-    }
-  };
+  React.useEffect(() => {
+    const novasQuantidades = {};
+    carrinho.forEach((item) => {
+      novasQuantidades[item.id] = item.quantidade;
+    });
+    setQuantidadesNoCarrinho(novasQuantidades);
+  }, [carrinho]);
 
-  const removerDoCarrinho = (produto) => {
-    const novoCarrinho = carrinho.filter(
-      (item) => !(item.id === produto.id && item.tipo === produto.tipo),
-    );
-    setCarrinho(novoCarrinho);
-  };
-
-  const totalCarrinho = () => {
-    return carrinho.reduce(
-      (total, item) => total + item.preco * item.quantidade,
-      0,
-    );
-  };
-
-  const pagar = ({ target }) => {
-    if (carrinho.length != 0) {
-      const number = '+5521981734706';
-      const mensagem = `Olá, gostaria de fazer um pedido de:\n ${carrinho.map(
-        (item) => item.nome,
-      )}\n para o endereço: ${infoModal.endereco}\n N/Casa: ${
-        infoModal.numero
-      }\n Total: ${Math.round(totalCarrinho())} reais`;
-      const linkWhatsApp = `https://wa.me/${number}?text=${encodeURIComponent(
-        mensagem,
-      )}`;
-      window.location.href = linkWhatsApp;
-    }
-    /* 
-    const number = '+5521981734706';
-    const mensagem = `Olá, gostaria de fazer um pedido: `;
-    // const mensagem = `Olá, gostaria de um ${chosen}: ${target.value} Para o endereço: ${infoModal.endereco} N/Casa: ${infoModal.numero}`;
-   const linkWhatsApp = `https://wa.me/${number}?text=${encodeURIComponent(
-      mensagem,
-    )}`;
-    window.location.href = linkWhatsApp; */
-  };
   React.useEffect(() => {
     fetch(
       `https://magnificosdb-2debd-default-rtdb.firebaseio.com/${chosen}.json`,
@@ -92,45 +48,7 @@ const Produtos = ({ infoModal }) => {
       <div className={styles.initContent + ' animeLeft'}>
         <MuralDeImagens />
       </div>
-      {accordeon ? (
-        <section className={styles.carrinhoSection + ' animeLeft'}>
-          <h2>Itens no Carrinho:</h2>
-          <ul>
-            {carrinho.map((item) => (
-              <li key={`${item.tipo} ${item.id}`}>
-                <span
-                  className={styles.remove}
-                  onClick={() => removerDoCarrinho(item)}
-                >
-                  x
-                </span>{' '}
-                {item.nome} - Quantidade: {item.quantidade}
-              </li>
-            ))}
-          </ul>
-          <div className={styles.carrinhoButton}>
-            <span className={styles.carrinhoPagar} onClick={pagar}>
-              Pagar: R$ {Math.round(totalCarrinho())}
-            </span>
-            <p
-              onClick={() => setAccordeon(false)}
-              className={styles.carrinhoPagar}
-            >
-              Fechar Carrinho
-            </p>
-          </div>
-        </section>
-      ) : (
-        <button
-          onClick={() => setAccordeon(true)}
-          className={styles.carrinhoIcon}
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/126/126510.png"
-            alt=""
-          />
-        </button>
-      )}
+
       <span className={styles.buttons + ' animeLeft'}>
         <button
           onClick={() => {
@@ -218,10 +136,17 @@ const Produtos = ({ infoModal }) => {
             <h2 className={styles.nome}>{dado.nome}</h2>
             <p className={styles.preco}>R$ {dado.preco}</p>
             <button
-              onClick={() => adicionarAoCarrinho(dado)}
+              onClick={() => {
+                adicionarAoCarrinho(dado);
+              }}
               className={styles.button}
             >
-              Adicionar ao carrinho.
+              Adicionar ao carrinho.{' '}
+              {quantidadesNoCarrinho[dado.id] > 0 && (
+                <span className={styles.qtd}>
+                  x{quantidadesNoCarrinho[dado.id]}
+                </span>
+              )}
             </button>
           </div>
         ))}

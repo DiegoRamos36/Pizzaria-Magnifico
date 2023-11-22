@@ -104,61 +104,7 @@ font-family: Oswald;
   font-size: 1.2rem;
 }
 
-.remove {
-  color: red;
-  font-family: Oswald;
-  background: #ddd;
-  padding: 0.2rem 0.4rem 0.3rem 0.4rem;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-right: 1rem;
-}
-.carrinhoIcon {
-  margin-top: 2rem;
-  margin-left: 2.5rem;
-  background: none;
-  border: 2px solid black;
-  border-radius: 4px;
-  box-shadow: 2px 2px 1px #333;
-}
-.carrinhoIcon img {
-width: 5rem;
-height: 5rem;
-}
 
-.carrinhoSection {
-  margin-top: 4rem;
-  margin-left: 2.5rem;
-  margin-bottom: 2rem;
-  height: 20rem;
-  font-size: 1.4rem;
-  width: 100%;
-
-}
-.carrinhoSection h2 {
-  font-size: 4rem;
-}
-
-.carrinhoSection ul li {
-  list-style: none;
-}
-
-.carrinhoButton {
-  width: 30vw;
- display: flex;
- justify-content: space-between;
-}
-
-.carrinhoPagar {
-  background: #bb0000;
-  color: white;
-  padding: 0.4rem;
-  display: inline-block;
-  width: auto;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-top: 1rem;
-}
 
 
 

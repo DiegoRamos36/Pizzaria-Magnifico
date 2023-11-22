@@ -1,0 +1,78 @@
+.remove {
+  color: red;
+  font-family: Oswald;
+  padding: 0.2rem 0.4rem 0.3rem 0.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.carrinhoIcon {
+  background: none;
+}
+.carrinhoIcon img {
+width: 2.4rem;
+height: 2.4rem;
+
+}
+
+.carrinhoSection {
+
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+  position: relative;
+  top: 30vh;
+  right: 10vw;
+  background-color: #fff;
+  border-radius: 1rem;
+  width: 25vw;
+  padding: 1rem;
+  font-size: 1.6vw;
+
+
+}
+
+.carrinhoSection h2 {
+  font-size: 3vw;
+}
+
+
+.carrinhoSection ul li {
+  list-style: none;
+}
+
+.carrinhoButton {
+ display: flex;
+ justify-content: space-between;
+}
+
+.carrinhoPagar {
+  background: #333;
+  color: white;
+  padding: 0.4vw;
+  display: inline-block;
+  width: auto;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+
+@media only screen and (max-width:768px) {
+  .carrinhoSection {
+    width: 30vw;
+    top: 40vw;
+    right: 35vw;
+    color: black;
+
+  }
+  .carrinhoSection h2 {
+    margin-top: 1rem;
+    font-size: 2rem;
+
+  
+  }
+  .carrinhoSection ul li {
+    font-size: 1rem;
+  }
+}

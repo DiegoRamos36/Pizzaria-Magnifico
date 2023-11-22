@@ -3,8 +3,17 @@ import styles from './Header.module.css';
 import { NavLink } from 'react-router-dom';
 import BurgerMenu from './BurgerMenu';
 import Local from './Local';
+import Carrinho from './Carrinho';
 
-const Header = ({ attInfoModal, viewCount }) => {
+const Header = ({
+  attInfoModal,
+  carrinho,
+  setCarrinho,
+  removerDoCarrinho,
+  pagar,
+  adicionarAoCarrinho,
+  totalCarrinho,
+}) => {
   const [scroll, setScroll] = React.useState(1);
 
   React.useEffect(() => {
@@ -38,13 +47,28 @@ const Header = ({ attInfoModal, viewCount }) => {
         <NavLink to={'/'}>Cardapio</NavLink>
         <NavLink to={'contato'}>Contato</NavLink>
         <NavLink to={'sobre'}>Sobre</NavLink>
-
         <span className={styles.local}>
           <Local attInfoModal={attInfoModal} />
         </span>
+        <Carrinho
+          carrinho={carrinho}
+          setCarrinho={setCarrinho}
+          removerDoCarrinho={removerDoCarrinho}
+          pagar={pagar}
+          adicionarAoCarrinho={adicionarAoCarrinho}
+          totalCarrinho={totalCarrinho}
+        />
       </div>
 
       <span className={styles.burger}>
+        <Carrinho
+          carrinho={carrinho}
+          setCarrinho={setCarrinho}
+          removerDoCarrinho={removerDoCarrinho}
+          pagar={pagar}
+          adicionarAoCarrinho={adicionarAoCarrinho}
+          totalCarrinho={totalCarrinho}
+        />
         <BurgerMenu attInfoModal={attInfoModal} />
         <span className={styles.localResp}>
           <Local attInfoModal={attInfoModal} />
