@@ -1,5 +1,8 @@
 import React from 'react';
 import styles from './Carrinho.module.css';
+import AbriCartSVG from './AbriCartSVG';
+import FecharCartSVG from './FecharCartSVG';
+import PagarCartSVG from './PagarCartSVG';
 
 const Carrinho = ({
   infoModal,
@@ -26,30 +29,32 @@ const Carrinho = ({
           <ul>
             {carrinho.map((item) => (
               <li key={`${item.tipo} ${item.id}`}>
-                <span
-                  className={styles.remove}
-                  onClick={() => removerDoCarrinho(item)}
-                >
-                  x
-                </span>{' '}
-                {item.nome} - Quantidade: {item.quantidade}
+                <p>
+                  <span
+                    className={styles.remove}
+                    onClick={() => removerDoCarrinho(item)}
+                  >
+                    x
+                  </span>{' '}
+                  {item.nome} - Quantidade: {item.quantidade}
+                </p>
               </li>
             ))}
           </ul>
+          <h4>Total: {Math.floor(totalCarrinho())}</h4>
           <div className={styles.carrinhoButton}>
             <span
               style={{ marginRight: '5rem' }}
               className={styles.carrinhoPagar}
               onClick={pagar}
             >
-              <img src="https://i.imgur.com/obEpVNK.png" alt="" />{' '}
-              {Math.floor(totalCarrinho())}
+              <PagarCartSVG />
             </span>
             <p
               onClick={() => setAccordeon(false)}
               className={styles.carrinhoPagar}
             >
-              <img src="https://i.imgur.com/Dn0NXGc.png" alt="" />
+              <FecharCartSVG />
             </p>
           </div>
         </section>
@@ -58,7 +63,7 @@ const Carrinho = ({
           onClick={() => setAccordeon(true)}
           className={styles.carrinhoIcon}
         >
-          <img src="https://i.imgur.com/X45jcdJ.png" alt="" />{' '}
+          <AbriCartSVG />
           {itens > 0 && <span className={styles.contadorItens}>{itens}</span>}
         </button>
       )}
