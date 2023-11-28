@@ -36,7 +36,7 @@ const Carrinho = ({
                   >
                     x
                   </span>{' '}
-                  {item.nome} - Quantidade: {item.quantidade}
+                  {item.nome}: ({item.quantidade})
                 </p>
               </li>
             ))}

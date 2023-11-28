@@ -3,20 +3,24 @@
 
 
 .contato {
-  min-height: 100vh;
+  min-height: 200vh;
   margin-top: 10vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
+
+
 
 .cardHeader {
   padding: 1rem;
-  background: linear-gradient(45deg, #ffd700, #ffd700 50%, #ffd700);
+  background:#EB3232;
   text-align: center;
   font-size: 1.6rem;
 }
 .cardHeader h1 {
-  color: #262626;
+  color: #fff;
+  font-size: 3rem;
   font-family: Oswald;
 }
 
@@ -26,13 +30,14 @@
   margin-left: 2vw;
 }
 
+
 .card {
-  margin-top: 15vh;
+  margin-top: 10vh;
   background: #fff;
-  height: 60vh;
-  width: 25vw;
+  height: 30rem;
+  width: 30rem;
   overflow: hidden;
-  border-radius: 5%;
+  border-radius: .5rem;
   box-shadow: 0.4em 5px 5px #bbb;
 }
 
@@ -55,11 +60,36 @@
   align-items: center;
 }
 
+.mainCard {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  
+}
+
+.cardContato {
+  margin-top: 10vh;
+  background: #fff;
+  height: 30rem;
+  width: 40rem;
+  overflow: hidden;
+  border-radius: .5rem;
+  box-shadow: 0.4em 5px 5px #bbb;
+} 
+
+
 @media only screen and (max-width: 768px) {
   .contato {
     flex-direction: column;
     align-items: center;
 
+  }
+  .cardContato {
+    width: 80%;
+  }
+
+  .cardContato h1 {
+    font-size: 8vw;
   }
 
   .card {

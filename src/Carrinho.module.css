@@ -2,6 +2,7 @@
   color: red;
   font-family: Oswald;
   cursor: pointer;
+  font-size: 1.4rem;
 }
 .carrinhoIcon {
   background: none;
@@ -69,7 +70,7 @@ height: 2.4rem;
     font-size: 1.2rem;
    }
   .carrinhoSection p {
-    font-size: 2.8vw;
+    font-size: 1.4rem;
   }
   .carrinhoSection ul li {
     font-size: 1rem;
@@ -81,11 +82,10 @@ height: 2.4rem;
 
 @media only screen and (max-width: 468px) {
   .carrinhoSection {
-    padding: 2rem;
     right: 20vw;
   }
   .carrinhoSection p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   }
 
 }

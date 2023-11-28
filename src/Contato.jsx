@@ -1,15 +1,23 @@
 import React from 'react';
 import styles from './Contato.module.css';
-import Head from './Head';
 import { NavLink } from 'react-router-dom';
 import GoogleMaps from './GoogleMaps';
 import ContatoForm from './ContatoForms';
+import Contratando from './Contratando';
 
 //-22.750662148057195, -43.39674977633698
 //AIzaSyDU7nccS5aOHCfU7HwSyboVVW-yp92nDe4 API GOOGLE
 const Contato = () => {
   return (
     <section className={styles.contato + ' animeLeft'}>
+      <div className={styles.mainCard}>
+        <div className={styles.cardContato}>
+          <div className={styles.cardHeader}>
+            <h1>Trabalhe Conosco</h1>
+          </div>
+          <Contratando />
+        </div>
+      </div>
       <div className={styles.card}>
         <div className={styles.cardHeader}>
           <h1>Redes Sociais</h1>
@@ -52,7 +60,7 @@ const Contato = () => {
       </div>
       <div className={styles.card}>
         <div className={styles.cardHeader}>
-          <h1>Se Preferir</h1>
+          <h1>Mensagem</h1>
         </div>
         <ContatoForm />
       </div>
