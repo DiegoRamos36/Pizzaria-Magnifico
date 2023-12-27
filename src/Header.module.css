@@ -10,7 +10,7 @@
   position: fixed;
   top: 0;
   z-index: 9;
-  background: linear-gradient(180deg, #009246 -136.79%, #54C50A 190.71%, #5AFF15 190.71%);
+  background:#FF0000;
 }
 
 .icons {
@@ -51,7 +51,7 @@ border-radius: 4px;
 }
 
 .titulo img {
- width: 20vh;
+ width: 25vh;
 }
 
 

@@ -37,7 +37,7 @@ const Header = ({
     <nav style={{ opacity: scroll }} className={styles.navigation}>
       <span className={styles.titulo}>
         <img
-          src="https://i.imgur.com/5oqmuYM.png"
+          src="https://i.imgur.com/xLNT3JO.png"
           alt=""
           onClick={() => (window.location.href = '/')}
         />

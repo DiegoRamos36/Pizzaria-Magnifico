@@ -15,7 +15,7 @@ const Footer = () => {
       <div className={styles.rodapeContainer}>
         <div className={styles.rodapeLogo}>
           <img
-            src="https://i.imgur.com/5oqmuYM.png"
+            src="https://i.imgur.com/xLNT3JO.png"
             alt="Logo Magnifico"
             onClick={scrollToTop}
             style={{ cursor: 'pointer' }}

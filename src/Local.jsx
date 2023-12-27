@@ -4,56 +4,51 @@ import styles from './Local.module.css';
 const Local = ({ attInfoModal }) => {
   const [modal, setModal] = useState(false);
   const [localizado, setLocalizado] = useState(false);
-  const [cep, setCep] = useState(0);
-  const [bairro, setBairro] = useState('');
+  const [ref, setRef] = useState('');
+  const [nome, setNome] = useState('');
   const [cidade, setCidade] = useState('');
   const [endereco, setEndereco] = useState('');
   const [numero, setNumero] = useState(0);
 
   useEffect(() => {
     const savedData = JSON.parse(localStorage.getItem('localData')) || {};
-    setCep(savedData.cep || '');
-    setBairro(savedData.bairro || '');
+    setRef(savedData.ref || '');
+    setNome(savedData.nome || '');
     setCidade(savedData.cidade || '');
     setEndereco(savedData.endereco || '');
     setNumero(savedData.numero || '');
     setLocalizado(savedData.localizado || false);
     attInfoModal({
-      cep: savedData.cep || '',
+      ref: savedData.ref || '',
       endereco: savedData.endereco || '',
       numero: savedData.numero || '',
       cidade: savedData.cidade || '',
-      bairro: savedData.bairro || '',
+      nome: savedData.nome || '',
     });
   }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (cep.length !== 8) {
-      console.error('CEP inválido');
-      return;
-    } else {
-      localStorage.setItem(
-        'localData',
-        JSON.stringify({
-          cep,
-          endereco,
-          numero,
-          cidade,
-          bairro,
-          localizado: true,
-        }),
-      );
-      attInfoModal({
-        cep,
+    localStorage.setItem(
+      'localData',
+      JSON.stringify({
+        ref,
         endereco,
         numero,
         cidade,
-        bairro,
-      });
-      setLocalizado(true);
-      setModal(false);
-    }
+        nome,
+        localizado: true,
+      }),
+    );
+    attInfoModal({
+      ref,
+      endereco,
+      numero,
+      cidade,
+      nome,
+    });
+    setLocalizado(true);
+    setModal(false);
   };
 
   const openModal = () => {
@@ -84,7 +79,7 @@ const Local = ({ attInfoModal }) => {
         alt=""
         onClick={openModal}
       />
-      <p style={{ color: '#ff0000', fontFamily: 'Oswald' }}>Logado</p>
+      <p style={{ color: '#ccc', fontFamily: 'Oswald' }}>Logado</p>
       {modal && (
         <div className={styles.modal}>
           <form className={styles.modalContent} onSubmit={handleSubmit}>
@@ -100,17 +95,13 @@ const Local = ({ attInfoModal }) => {
             </span>
             <div className={styles.fields}>
               <label>
-                <p>Cep</p>
+                <p>Nome</p>
                 <input
                   type="text"
-                  onBlur={({ target }) => {
-                    setCep(target.value);
-                    console.log(cep);
-                  }}
-                  maxLength={8}
-                  required
+                  onChange={({ target }) => setNome(target.value)}
                 />
               </label>
+
               <label>
                 <p>Endereço</p>
                 <input
@@ -133,10 +124,13 @@ const Local = ({ attInfoModal }) => {
                 />
               </label>
               <label>
-                <p>Bairro</p>
+                <p>Ponto de Referência</p>
                 <input
                   type="text"
-                  onChange={({ target }) => setBairro(target.value)}
+                  onBlur={({ target }) => {
+                    setRef(target.value);
+                    console.log(ref);
+                  }}
                 />
               </label>
               <button type="submit" className={styles.confirmar}>

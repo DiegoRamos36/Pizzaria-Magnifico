@@ -14,12 +14,12 @@
 
 .cardHeader {
   padding: 1rem;
-  background:#EB3232;
+  background:#FFFF00;
   text-align: center;
   font-size: 1.6rem;
 }
 .cardHeader h1 {
-  color: #fff;
+  color: #262626;
   font-size: 3rem;
   font-family: Oswald;
 }

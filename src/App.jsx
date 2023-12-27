@@ -47,6 +47,8 @@ const App = () => {
         (item) => item.nome,
       )}\n para o endereço: ${infoModal.endereco}\n N/Casa: ${
         infoModal.numero
+      } \n Ponto de Referência: ${infoModal.ref} \n Quem recebe: ${
+        infoModal.nome
       }\n Total: ${Math.round(totalCarrinho())} reais`;
       const linkWhatsApp = `https://wa.me/${number}?text=${encodeURIComponent(
         mensagem,
