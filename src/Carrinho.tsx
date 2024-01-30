@@ -11,7 +11,7 @@ import {
   totalCarrinho,
 } from "./App";
 
-interface CarrinhoProps extends funcionais {
+interface CarrinhoProps {
   carrinho: IProduto[];
   removerDoCarrinho: removerDoCarrinho;
   pagar: pagar;
