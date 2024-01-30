@@ -1,24 +1,22 @@
-import React from 'react';
-import axios from 'axios';
-import styles from './Contratando.module.css';
+import React from "react";
+import axios from "axios";
+import styles from "./Contratando.module.css";
 
 const Contratando = () => {
-  const [nome, setNome] = React.useState('');
-
-  const [email, setEmail] = React.useState('');
-
-  const [escolha, setEscolha] = React.useState('');
-  const [exp, setExp] = React.useState('');
-  const [publicidade, setPublicidade] = React.useState('');
+  const [nome, setNome] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [escolha, setEscolha] = React.useState("");
+  const [exp, setExp] = React.useState("");
+  const [publicidade, setPublicidade] = React.useState("");
   const [enviado, setEnviado] = React.useState(false);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     if (!nome && !email && !escolha && !exp && !publicidade) {
-      console.error('Por Favor, preencha todos os campos obrigatórios');
+      console.error("Por Favor, preencha todos os campos obrigatórios");
     }
     try {
-      await axios.post('https://formspree.io/f/xeqbwlyl', {
+      await axios.post("https://formspree.io/f/xeqbwlyl", {
         nome,
         email,
         escolha,
@@ -27,7 +25,7 @@ const Contratando = () => {
       });
       setEnviado(true);
     } catch (error) {
-      console.error('Erro ao enviar o formulário:', error);
+      console.error("Erro ao enviar o formulário:", error);
     }
   };
 
@@ -37,7 +35,7 @@ const Contratando = () => {
         <p>Mensagem enviada com sucesso!</p>
       ) : (
         <form onSubmit={handleSubmit}>
-          <label style={{ marginTop: '2rem' }} required>
+          <label style={{ marginTop: "2rem" }} aria-required>
             Nome Completo
             <br />
             <input

@@ -3,7 +3,7 @@
 }
 
 .firstContent {
-  background: url('https://th.bing.com/th/id/OIG.auA8piirumkR6lG66dYN?pid=ImgGn');
+  background: url("https://i.imgur.com/vrgdxIL.jpeg");
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -12,11 +12,10 @@
 }
 
 .firstContent h1 {
- font-size: 20vw;
-background: rgba(0, 0, 0, 0.3);
-padding: 2vw;
-border-radius: 4vw;
-
+  font-size: 20vw;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2vw;
+  border-radius: 4vw;
 }
 
 .secondContent {
@@ -75,7 +74,7 @@ border-radius: 4vw;
 }
 
 .lastContent {
-  background: url('https://img.freepik.com/fotos-premium/bandeira-da-italia-em-uma-superficie-de-madeira-velha_314149-1354.jpg?w=2000');
+  background: url("https://img.freepik.com/fotos-premium/bandeira-da-italia-em-uma-superficie-de-madeira-velha_314149-1354.jpg?w=2000");
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -86,25 +85,14 @@ border-radius: 4vw;
 
 .lastContent h1 {
   font-size: 20vw;
- background: rgba(0, 0, 0, 0.3);
- padding: 2vw;
- border-radius: 4vw;
- }
-
-
-
-
-
-
-
-
-
-
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2vw;
+  border-radius: 4vw;
+}
 
 @media only screen and (max-width: 600px) {
   .secondContent h4 {
     font-size: 1rem;
- 
   }
   .secondContent {
     margin-bottom: 20rem;
@@ -112,7 +100,6 @@ border-radius: 4vw;
 
   .fourthContent h4 {
     font-size: 1rem;
- 
   }
   .fourthContent {
     margin-top: 2rem;
@@ -120,10 +107,9 @@ border-radius: 4vw;
   }
 }
 
-@media only screen and (max-width: 468px ) {
+@media only screen and (max-width: 468px) {
   .secondContent h4 {
     font-size: 3vw;
-
   }
   .secondContent {
     margin-bottom: 10rem;
@@ -132,5 +118,3 @@ border-radius: 4vw;
     font-size: 3vw;
   }
 }
-
-
