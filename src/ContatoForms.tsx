@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import styles from './ContatoForms.module.css';
+import React, { useState } from "react";
+import axios from "axios";
+import styles from "./ContatoForms.module.css";
 
 const ContatoForm = () => {
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [mensagem, setMensagem] = useState('');
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [mensagem, setMensagem] = useState("");
   const [enviado, setEnviado] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
 
     try {
-      await axios.post('https://formspree.io/f/xeqbwlyl', {
+      await axios.post("https://formspree.io/f/xeqbwlyl", {
         nome,
         email,
         mensagem,
@@ -20,7 +20,7 @@ const ContatoForm = () => {
 
       setEnviado(true);
     } catch (error) {
-      console.error('Erro ao enviar o formulário:', error);
+      console.error("Erro ao enviar o formulário:", error);
     }
   };
 

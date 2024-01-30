@@ -1,36 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import styles from './Local.module.css';
+import React, { useState, useEffect } from "react";
+import styles from "./Local.module.css";
+import { IinfoModal } from "./App";
 
-const Local = ({ attInfoModal }) => {
+interface LocalProps {
+  setInfoModal: React.Dispatch<React.SetStateAction<IinfoModal | undefined>>;
+}
+
+const Local: React.FC<LocalProps> = ({ setInfoModal }) => {
   const [modal, setModal] = useState(false);
   const [localizado, setLocalizado] = useState(false);
-  const [ref, setRef] = useState('');
-  const [nome, setNome] = useState('');
-  const [cidade, setCidade] = useState('');
-  const [endereco, setEndereco] = useState('');
+  const [ref, setRef] = useState("");
+  const [nome, setNome] = useState("");
+  const [cidade, setCidade] = useState("");
+  const [endereco, setEndereco] = useState("");
   const [numero, setNumero] = useState(0);
 
-  useEffect(() => {
-    const savedData = JSON.parse(localStorage.getItem('localData')) || {};
-    setRef(savedData.ref || '');
-    setNome(savedData.nome || '');
-    setCidade(savedData.cidade || '');
-    setEndereco(savedData.endereco || '');
-    setNumero(savedData.numero || '');
-    setLocalizado(savedData.localizado || false);
-    attInfoModal({
-      ref: savedData.ref || '',
-      endereco: savedData.endereco || '',
-      numero: savedData.numero || '',
-      cidade: savedData.cidade || '',
-      nome: savedData.nome || '',
-    });
-  }, []);
-
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     localStorage.setItem(
-      'localData',
+      "localData",
       JSON.stringify({
         ref,
         endereco,
@@ -38,9 +26,9 @@ const Local = ({ attInfoModal }) => {
         cidade,
         nome,
         localizado: true,
-      }),
+      })
     );
-    attInfoModal({
+    setInfoModal({
       ref,
       endereco,
       numero,
@@ -60,26 +48,26 @@ const Local = ({ attInfoModal }) => {
         className={styles.localizado}
         onClick={() => {
           setLocalizado(false);
-          localStorage.removeItem('localData');
+          localStorage.removeItem("localData");
         }}
       >
         <img
           src="https://raw.githubusercontent.com/DiegoRamos36/Pizzaria-Magnifico/63174490f689ce1ac356613221b3388df9132ea1/src/Img/local.svg"
-          style={{ height: '35px', width: '35px' }}
+          style={{ height: "35px", width: "35px" }}
           alt=""
         />
-        <p style={{ color: '#00ff00', fontFamily: 'Oswald' }}>Logado</p>
+        <p style={{ color: "#00ff00", fontFamily: "Oswald" }}>Logado</p>
       </span>
     );
   return (
     <div>
       <img
         src="https://raw.githubusercontent.com/DiegoRamos36/Pizzaria-Magnifico/63174490f689ce1ac356613221b3388df9132ea1/src/Img/localAdd.svg"
-        style={{ height: '35px', width: '35px' }}
+        style={{ height: "35px", width: "35px" }}
         alt=""
         onClick={openModal}
       />
-      <p style={{ color: '#ccc', fontFamily: 'Oswald' }}>Logado</p>
+      <p style={{ color: "#ccc", fontFamily: "Oswald" }}>Logado</p>
       {modal && (
         <div className={styles.modal}>
           <form className={styles.modalContent} onSubmit={handleSubmit}>
@@ -113,7 +101,7 @@ const Local = ({ attInfoModal }) => {
                 <p>N°</p>
                 <input
                   type="text"
-                  onBlur={({ target }) => setNumero(target.value)}
+                  onBlur={({ target }) => setNumero(Number(target.value))}
                 />
               </label>
               <label>

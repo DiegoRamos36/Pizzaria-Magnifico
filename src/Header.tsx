@@ -1,12 +1,30 @@
-import React from 'react';
-import styles from './Header.module.css';
-import { NavLink } from 'react-router-dom';
-import BurgerMenu from './BurgerMenu';
-import Local from './Local';
-import Carrinho from './Carrinho';
+import React from "react";
+import styles from "./Header.module.css";
+import { NavLink } from "react-router-dom";
+import BurgerMenu from "./BurgerMenu";
+import Local from "./Local";
+import Carrinho from "./Carrinho";
+import {
+  IProduto,
+  IinfoModal,
+  adicionarAoCarrinho,
+  pagar,
+  removerDoCarrinho,
+  totalCarrinho,
+} from "./App";
 
-const Header = ({
-  attInfoModal,
+interface HeaderProps {
+  setInfoModal: React.Dispatch<React.SetStateAction<IinfoModal | undefined>>;
+  carrinho: IProduto[];
+  setCarrinho: React.Dispatch<React.SetStateAction<IProduto[]>>;
+  removerDoCarrinho: removerDoCarrinho;
+  pagar: pagar;
+  adicionarAoCarrinho: adicionarAoCarrinho;
+  totalCarrinho: totalCarrinho;
+}
+
+const Header: React.FC<HeaderProps> = ({
+  setInfoModal,
   carrinho,
   setCarrinho,
   removerDoCarrinho,
@@ -26,10 +44,10 @@ const Header = ({
       setScroll(opacity);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -39,23 +57,21 @@ const Header = ({
         <img
           src="https://i.imgur.com/xLNT3JO.png"
           alt=""
-          onClick={() => (window.location.href = '/')}
+          onClick={() => (window.location.href = "/")}
         />
       </span>
 
       <div className={styles.icons}>
-        <NavLink to={'/'}>Cardapio</NavLink>
-        <NavLink to={'contato'}>Contato</NavLink>
-        <NavLink to={'sobre'}>Sobre</NavLink>
+        <NavLink to={"/"}>Cardapio</NavLink>
+        <NavLink to={"contato"}>Contato</NavLink>
+        <NavLink to={"sobre"}>Sobre</NavLink>
         <span className={styles.local}>
-          <Local attInfoModal={attInfoModal} />
+          <Local setInfoModal={setInfoModal} />
         </span>
         <Carrinho
           carrinho={carrinho}
-          setCarrinho={setCarrinho}
           removerDoCarrinho={removerDoCarrinho}
           pagar={pagar}
-          adicionarAoCarrinho={adicionarAoCarrinho}
           totalCarrinho={totalCarrinho}
         />
       </div>
@@ -63,15 +79,13 @@ const Header = ({
       <span className={styles.burger}>
         <Carrinho
           carrinho={carrinho}
-          setCarrinho={setCarrinho}
           removerDoCarrinho={removerDoCarrinho}
           pagar={pagar}
-          adicionarAoCarrinho={adicionarAoCarrinho}
           totalCarrinho={totalCarrinho}
         />
-        <BurgerMenu attInfoModal={attInfoModal} />
+        <BurgerMenu setInfoModal={setInfoModal} />
         <span className={styles.localResp}>
-          <Local attInfoModal={attInfoModal} />
+          <Local setInfoModal={setInfoModal} />
         </span>
       </span>
     </nav>

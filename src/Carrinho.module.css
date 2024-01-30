@@ -6,17 +6,38 @@
 }
 .carrinhoIcon {
   background: none;
-}
-.carrinhoIcon img {
-width: 2.4rem;
-height: 2.4rem;
-
+  height: auto;
 }
 
+.containerCart {
+  display: inline-block;
+  position: relative;
+}
+
+.contadorItens {
+  font-family: monospace;
+  position: relative;
+  top: -29px;
+  right: 9px;
+  color: #ff0000;
+  z-index: 1000;
+  font-size: 16px;
+}
+.containerCart::before {
+  content: "";
+  min-height: 22px;
+  min-width: 22px;
+  border-radius: 50%;
+  background-color: #ffff00;
+  display: inline-block;
+  position: absolute;
+  right: 4px;
+  top: -25px;
+}
 .carrinhoSection {
   display: flex;
   flex-direction: column;
- align-items: center;
+  align-items: center;
   position: relative;
   top: 30vh;
   right: 10vw;
@@ -25,22 +46,19 @@ height: 2.4rem;
   width: 25vw;
   padding: 1rem;
   font-size: 1.6vw;
-
-
 }
 
 .carrinhoSection h2 {
   font-size: 2.4rem;
 }
 
-
 .carrinhoSection ul li {
   list-style: none;
 }
 
 .carrinhoButton {
- display: flex;
- justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .carrinhoPagar {
@@ -54,21 +72,19 @@ height: 2.4rem;
   margin-top: 1rem;
 }
 
-
-@media only screen and (max-width:768px) {
+@media only screen and (max-width: 768px) {
   .carrinhoSection {
     width: 40vw;
     top: 40vh;
     right: 25vw;
     color: black;
-
   }
   .carrinhoSection h2 {
-   font-size: 2.4rem;
+    font-size: 2.4rem;
   }
   .carrinhoSection h4 {
     font-size: 1.2rem;
-   }
+  }
   .carrinhoSection p {
     font-size: 1.4rem;
   }
@@ -85,7 +101,6 @@ height: 2.4rem;
     right: 20vw;
   }
   .carrinhoSection p {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
   }
-
 }
