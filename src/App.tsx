@@ -121,19 +121,19 @@ const App = () => {
               }
             />
             <Route
-              path="pizzas/:id"
+              path="pizzas/:tipo"
               element={<Produto infoModal={infoModal} chosen={"pizzas"} />}
             />
             <Route
-              path="aperitivos/:id"
+              path="aperitivos/:tipo"
               element={<Produto infoModal={infoModal} chosen={"aperitivos"} />}
             />
             <Route
-              path="calzones/:id"
+              path="calzones/:tipo"
               element={<Produto infoModal={infoModal} chosen={"calzones"} />}
             />
             <Route
-              path="bebidas/:id"
+              path="bebidas/:tipo"
               element={<Produto infoModal={infoModal} chosen={"bebidas"} />}
             />
             <Route path="contato" element={<Contato />} />

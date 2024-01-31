@@ -13,7 +13,7 @@ const Produto: React.FC<ProdutoProps> = ({ chosen, infoModal }) => {
   const [pizza, setPizza] = React.useState<IProduto | null>(null);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
-  const { id } = useParams();
+  const { id, tipo } = useParams();
 
   const enviarMensagem = (event: React.FormEvent) => {
     const number = "+5521981734706";
@@ -43,9 +43,9 @@ const Produto: React.FC<ProdutoProps> = ({ chosen, infoModal }) => {
       }
     }
     fetchProduto(
-      `https://magnificosdb-2debd-default-rtdb.firebaseio.com/${chosen}/${id}.json`
+      `https://magnificosdb-2debd-default-rtdb.firebaseio.com/${chosen}/${tipo}.json`
     );
-  }, [id, chosen]);
+  }, [tipo, chosen]);
 
   if (loading) return <div className="loading"></div>;
   if (error) return <p>{error}</p>;

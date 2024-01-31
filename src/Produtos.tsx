@@ -127,18 +127,18 @@ const Produtos: React.FC<ProdutosProps> = ({
         <Head title="DEM - Cardápio" description="Cardapio do site dem" />
         {dados &&
           dados.map((dado: IProduto) => (
-            <div key={dado.id} className={styles.produtos + " animeLeft"}>
+            <div key={dado.tipo} className={styles.produtos + " animeLeft"}>
               <Link
                 to={
                   chosen.toLocaleLowerCase() == "pizzas"
-                    ? `pizzas/${dado.id}`
+                    ? `pizzas/${dado.tipo}`
                     : chosen.toLocaleLowerCase() == "aperitivos"
-                    ? `aperitivos/${dado.id}`
+                    ? `aperitivos/${dado.tipo}`
                     : chosen.toLocaleLowerCase() === "calzones"
-                    ? `calzones/${dado.id}`
-                    : `bebidas/${dado.id}`
+                    ? `calzones/${dado.tipo}`
+                    : `bebidas/${dado.tipo}`
                 }
-                key={dado.id}
+                key={dado.tipo}
               >
                 Ir para página do produto
               </Link>

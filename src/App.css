@@ -1,4 +1,6 @@
-
+body::-webkit-scrollbar {
+  display: none;
+}
 
 * {
   margin: 0;
@@ -15,7 +17,7 @@ body {
 .animeLeft {
   transform: translateX(-20px);
   opacity: 0;
-  animation: animeLeft .3s forwards;
+  animation: animeLeft 0.3s forwards;
 }
 
 @keyframes animeLeft {
@@ -47,6 +49,10 @@ body {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

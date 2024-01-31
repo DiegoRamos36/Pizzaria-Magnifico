@@ -38,8 +38,11 @@ const Carrinho: React.FC<CarrinhoProps> = ({
     <div>
       {accordeon ? (
         <section className={styles.carrinhoSection + " animeLeft"}>
-          <h2>Carrinho</h2>
-          <ul>
+          <div className={styles.title}>
+            <h2>Carrinho</h2>
+            <h5>total: {Math.floor(totalCarrinho())}</h5>
+          </div>
+          <ul className={styles.itens}>
             {carrinho.map((item) => (
               <li key={`${item.tipo} ${item.id}`}>
                 <p>
@@ -54,7 +57,7 @@ const Carrinho: React.FC<CarrinhoProps> = ({
               </li>
             ))}
           </ul>
-          <h4>Total: {Math.floor(totalCarrinho())}</h4>
+
           <div className={styles.carrinhoButton}>
             <span
               style={{ marginRight: "5rem" }}

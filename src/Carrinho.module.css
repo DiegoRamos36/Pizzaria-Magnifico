@@ -1,3 +1,38 @@
+.title {
+  margin-bottom: 1rem;
+}
+.title h5 {
+  font-weight: 100;
+}
+
+.itens {
+  position: relative;
+  display: block;
+  min-height: 300px;
+  max-height: 300px;
+  min-width: 300px;
+  max-width: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.itens::-webkit-scrollbar {
+  width: 6px; /* ajuste conforme necessário */
+}
+
+.itens::-webkit-scrollbar-track {
+  background-color: transparent; /* Cor de fundo da área de track */
+}
+
+.itens::-webkit-scrollbar-thumb {
+  background-color: #888; /* Cor do thumb do scrollbar */
+  border-radius: 5px; /* Bordas arredondadas do thumb */
+}
+
+.itens::-webkit-scrollbar-button {
+  display: none; /* Esconde as setas */
+}
+
 .remove {
   color: red;
   font-family: Oswald;
@@ -37,15 +72,19 @@
 .carrinhoSection {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   position: relative;
-  top: 30vh;
-  right: 10vw;
+  top: 35vh;
+  min-height: 400px;
+  min-width: 300px;
+  max-width: 400px;
+  max-height: 500px;
+  right: 100%;
   background-color: #fff;
-  border-radius: 1rem;
-  width: 25vw;
-  padding: 1rem;
-  font-size: 1.6vw;
+  border-radius: 4px;
+  padding: 1.6rem;
+  font-size: 1.4rem;
 }
 
 .carrinhoSection h2 {
@@ -58,11 +97,12 @@
 
 .carrinhoButton {
   display: flex;
-  justify-content: space-between;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .carrinhoPagar {
-  background: #333;
+  border: 2px solid black;
   color: white;
   padding: 0.2rem 0.6rem 0.2rem 0.6rem;
   display: inline-block;
@@ -102,5 +142,12 @@
   }
   .carrinhoSection p {
     font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 410px) {
+  .carrinhoSection {
+    padding: 1rem;
+    right: 30%;
   }
 }
