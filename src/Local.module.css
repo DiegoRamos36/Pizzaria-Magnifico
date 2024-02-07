@@ -1,15 +1,14 @@
-
-
 .modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
 }
 
 .modalContent {
@@ -20,8 +19,8 @@
   position: relative;
   background: #fff;
   padding: 20px;
-  width: 30vw;
-  height: 35rem;
+  width: 40vw;
+  height: 30rem;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -34,22 +33,20 @@
   height: 10vh;
 }
 
-
 .close {
-
   position: absolute;
-
+  color: red;
   top: 10px;
   right: 10px;
   cursor: pointer;
   font-size: 3rem;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
+  font-family: monospace;
 }
 
 .close:hover {
-background: rgba(0, 0, 0, 0.3);
-border-radius: 50%;
+  color: #999;
 }
 
 .fields {
@@ -60,50 +57,45 @@ border-radius: 50%;
   font-size: 1.2rem;
   font-weight: bold;
   font-family: Poppins;
-
 }
 
 .fields input {
-
-  width: 30vw;
+  width: 35vw;
   height: 1.5rem;
+  border-color: #eee;
+  background-color: #f8f8f8;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+}
 
+.fields input:focus {
+  border-color: #000;
 }
 
 .confirmar {
-
-  background: #333;
+  background: #00ff00;
   color: white;
   border: none;
   font-family: Poppins;
-  font-size: 1rem;
+  font-size: 1.4rem;
   margin-top: 1rem;
-  padding: 0.4rem 1rem;
-cursor: pointer;
-margin-top: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
 }
-
-.confirmar:hover {
-  background-color: #222;
-}
-
 
 @media only screen and (max-width: 768px) {
-
   .modalContent {
     height: 90vh;
     width: 80vw;
   }
   .modalContent img {
     width: 30vw;
-    height: 20vh
+    height: 20vh;
   }
-h2 {
-  font-size: 2rem;
-}
-  .fields  input {
+  h2 {
+    font-size: 2rem;
+  }
+  .fields input {
     width: 70vw;
-   }
+  }
 }
-
-

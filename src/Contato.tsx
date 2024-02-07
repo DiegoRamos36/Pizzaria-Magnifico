@@ -1,22 +1,22 @@
-import React from 'react';
-import styles from './Contato.module.css';
-import { NavLink } from 'react-router-dom';
-import GoogleMaps from './GoogleMaps';
-import ContatoForm from './ContatoForms';
-import Contratando from './Contratando';
+import React from "react";
+import styles from "./Contato.module.css";
+import { NavLink } from "react-router-dom";
+import GoogleMaps from "./GoogleMaps";
+import ContatoForm from "./ContatoForms";
+import Contratando from "./Contratando";
+import Head from "./Head";
 
 //-22.750662148057195, -43.39674977633698
 //AIzaSyDU7nccS5aOHCfU7HwSyboVVW-yp92nDe4 API GOOGLE
 const Contato = () => {
   return (
-    <section className={styles.contato + ' animeLeft'}>
-      <div className={styles.mainCard}>
-        <div className={styles.cardContato}>
-          <div className={styles.cardHeader}>
-            <h1>Trabalhe Conosco</h1>
-          </div>
-          <Contratando />
+    <section className={styles.contato + " animeLeft"}>
+      <Head title={"DEM - Contato"} description={"Nossos contatos"} />
+      <div className={styles.card}>
+        <div className={styles.cardHeader}>
+          <h1>Trabalhe Conosco</h1>
         </div>
+        <Contratando />
       </div>
       <div className={styles.card}>
         <div className={styles.cardHeader}>
@@ -31,7 +31,7 @@ const Contato = () => {
             <img
               src="https://github.com/DiegoRamos36/Pizzaria-Magnifico/blob/main/src/Img/x.png?raw=true"
               alt=""
-            />{' '}
+            />{" "}
             <NavLink to="">@DomElMagnifico</NavLink>
           </li>
           <li>

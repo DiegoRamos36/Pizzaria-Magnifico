@@ -4,7 +4,6 @@ import Head from "./Head";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
 import MuralDeImagens from "./MuralDeImagens";
-import Carrinho from "./Carrinho";
 import { IProduto, adicionarAoCarrinho } from "./App";
 
 interface ProdutosProps {
@@ -19,10 +18,6 @@ const Produtos: React.FC<ProdutosProps> = ({
   const [dados, setDados] = React.useState<IProduto[]>();
   const [loading, setLoading] = React.useState(true);
   const [chosen, setChosen] = React.useState("pizzas");
-  const [hoveredPzz, setHoveredPzz] = React.useState(false);
-  const [hoveredApr, setHoveredApr] = React.useState(false);
-  const [hoveredClz, setHoveredClz] = React.useState(false);
-  const [hoveredBB, setHoveredBB] = React.useState(false);
   const [quantidadesNoCarrinho, setQuantidadesNoCarrinho] = React.useState<{
     [key: number]: number;
   }>({});
@@ -63,15 +58,8 @@ const Produtos: React.FC<ProdutosProps> = ({
           onClick={() => {
             setChosen("pizzas");
           }}
-          onMouseOver={() => {
-            setHoveredPzz(true);
-          }}
-          onMouseOut={() => {
-            setHoveredPzz(false);
-          }}
           style={{
-            backgroundColor: hoveredPzz ? "#ff0000" : "#bb0000",
-            marginLeft: "2.5rem",
+            backgroundColor: "#ff0000",
           }}
         >
           Pizzas
@@ -81,13 +69,7 @@ const Produtos: React.FC<ProdutosProps> = ({
           onClick={() => {
             setChosen("aperitivos");
           }}
-          onMouseOver={() => {
-            setHoveredApr(true);
-          }}
-          onMouseOut={() => {
-            setHoveredApr(false);
-          }}
-          style={{ backgroundColor: hoveredApr ? "#eeee00" : "#ffaa00" }}
+          style={{ backgroundColor: "#ffaa00" }}
         >
           Aperitivos
         </button>
@@ -95,13 +77,7 @@ const Produtos: React.FC<ProdutosProps> = ({
           onClick={() => {
             setChosen("calzones");
           }}
-          onMouseOver={() => {
-            setHoveredClz(true);
-          }}
-          onMouseOut={() => {
-            setHoveredClz(false);
-          }}
-          style={{ backgroundColor: hoveredClz ? "#00ff00" : "#00c000" }}
+          style={{ backgroundColor: "#00c000" }}
         >
           Calzones
         </button>
@@ -109,22 +85,26 @@ const Produtos: React.FC<ProdutosProps> = ({
           onClick={() => {
             setChosen("bebidas");
           }}
-          onMouseOver={() => {
-            setHoveredBB(true);
-          }}
-          onMouseOut={() => {
-            setHoveredBB(false);
-          }}
           style={{
-            backgroundColor: hoveredBB ? "#003Fff" : "#0000bb",
+            backgroundColor: "#0000bb",
           }}
         >
           Bebidas
         </button>
+        <button
+          onClick={() => {
+            setChosen("doces");
+          }}
+          style={{
+            backgroundColor: "#915FE8",
+          }}
+        >
+          Doces
+        </button>
       </span>
 
       <section className={styles.content + " animeLeft"}>
-        <Head title="DEM - Cardápio" description="Cardapio do site dem" />
+        <Head title="DEM - Pizzaria" description="Cardapio do site dem" />
         {dados &&
           dados.map((dado: IProduto) => (
             <div key={dado.tipo} className={styles.produtos + " animeLeft"}>
@@ -136,13 +116,20 @@ const Produtos: React.FC<ProdutosProps> = ({
                     ? `aperitivos/${dado.tipo}`
                     : chosen.toLocaleLowerCase() === "calzones"
                     ? `calzones/${dado.tipo}`
-                    : `bebidas/${dado.tipo}`
+                    : chosen.toLocaleLowerCase() === "bebidas"
+                    ? `bebidas/${dado.tipo}`
+                    : `doces/${dado.tipo}`
                 }
                 key={dado.tipo}
               >
                 Ir para página do produto
               </Link>
-              <img src={dado.foto} alt="" width="80px" height="300px" />
+              <img
+                src={dado.foto}
+                alt={`${chosen}: ${dado.nome}`}
+                width="80px"
+                height="300px"
+              />
               <h2 className={styles.nome}>{dado.nome}</h2>
               <p className={styles.preco}>R$ {dado.preco}</p>
               <button

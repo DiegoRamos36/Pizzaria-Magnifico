@@ -90,15 +90,17 @@
   }
 
   .pizza h1 {
-    font-size: 2.5rem;
+    margin-top: -2rem;
+    font-size: 4.2rem;
   }
   .pizza p {
     font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
 
   .comprar {
     font-size: 1.2rem;
-    padding: 0.4rem 1.2rem 0.4rem 1.2rem;
+    padding: 0.4rem 1rem 0.4rem 1rem;
   }
 
   .voltar {
@@ -134,7 +136,7 @@
 
 @media only screen and (max-width: 600px) {
   .pizza h1 {
-    font-size: 2rem;
+    font-size: 4.2rem;
   }
   .preco {
     margin-top: 1rem;

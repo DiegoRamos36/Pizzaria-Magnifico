@@ -136,6 +136,10 @@ const App = () => {
               path="bebidas/:tipo"
               element={<Produto infoModal={infoModal} chosen={"bebidas"} />}
             />
+            <Route
+              path="doces/:tipo"
+              element={<Produto infoModal={infoModal} chosen={"doces"} />}
+            />
             <Route path="contato" element={<Contato />} />
             <Route path="sobre" element={<Sobre />} />
           </Routes>

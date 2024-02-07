@@ -1,6 +1,5 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 .navigation {
   display: flex;
   align-items: center;
@@ -10,7 +9,7 @@
   position: fixed;
   top: 0;
   z-index: 9;
-  background:#FF0000;
+  background: #ff0000;
 }
 
 .icons {
@@ -23,12 +22,12 @@
 }
 
 .icons a {
-color: white;
-text-decoration: none;
-font-family: Bebas Neue;
-font-size: 2rem;
-padding: 0.6rem;
-border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-family: Bebas Neue;
+  font-size: 2rem;
+  padding: 0.6rem;
+  border-radius: 4px;
 }
 
 .icons a:hover {
@@ -41,9 +40,6 @@ border-radius: 4px;
   cursor: pointer;
 }
 
-
-
-
 .titulo {
   position: relative;
   margin-left: 10rem;
@@ -51,14 +47,12 @@ border-radius: 4px;
 }
 
 .titulo img {
- width: 25vh;
+  width: 25vh;
 }
-
 
 .burger {
   color: white;
   display: none;
-  
 }
 
 .localResp {
@@ -66,32 +60,27 @@ border-radius: 4px;
   color: black;
 }
 
-
 @media only screen and (max-width: 768px) {
- .burger {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 2.5rem;
- }
- .icons {
-  display: none;
- }
- .titulo {
-  margin-left: 2rem;
- }
- .localResp {
-  display: block;
-}
-}
-
-
-@media only screen and (max-width: 468px) {
-  .titulo img {   
-    width: 15vh;
+  .burger {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 2.5rem;
+  }
+  .icons {
+    display: none;
+  }
+  .titulo {
+    margin-left: 2rem;
+  }
+  .localResp {
+    display: block;
   }
 }
 
-
-
+@media only screen and (max-width: 468px) {
+  .titulo img {
+    width: 25vh;
+  }
+}

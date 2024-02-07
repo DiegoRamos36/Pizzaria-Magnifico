@@ -41,7 +41,6 @@
 }
 .carrinhoIcon {
   background: none;
-  height: auto;
 }
 
 .containerCart {
@@ -112,7 +111,17 @@
   margin-top: 1rem;
 }
 
+@media only screen and (max-width: 922px) {
+  .carrinhoIcon {
+    position: absolute;
+    top: 10px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
+  .carrinhoIcon {
+    position: static;
+  }
   .carrinhoSection {
     width: 40vw;
     top: 40vh;

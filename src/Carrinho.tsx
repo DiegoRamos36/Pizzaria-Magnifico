@@ -1,8 +1,8 @@
 import React, { CSSProperties } from "react";
 import styles from "./Carrinho.module.css";
-import AbriCartSVG from "./AbriCartSVG";
-import FecharCartSVG from "./FecharCartSVG";
-import PagarCartSVG from "./PagarCartSVG";
+import AbriCartSVG from "./assets/AbriCartSVG";
+import FecharCartSVG from "./assets/FecharCartSVG";
+import PagarCartSVG from "./assets/PagarCartSVG";
 import {
   IProduto,
   funcionais,

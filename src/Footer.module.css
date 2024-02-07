@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-
 footer {
   margin-top: 15rem;
-  background: #00A300;
+  background: #00a300;
   color: #fff;
   padding: 20px 0;
   width: 100%;
@@ -41,9 +40,8 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
-
   .rodapeInfo {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
   .rodapeLogo img {
     width: 5rem;
@@ -52,4 +50,3 @@ footer {
     scale: 0.8;
   }
 }
-

@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import styles from "./Produto.module.css";
 import Head from "./Head";
 import { IProduto, IinfoModal } from "./App";
+import Loading from "./Loading";
 
 interface ProdutoProps {
   chosen: string;
@@ -13,13 +14,14 @@ const Produto: React.FC<ProdutoProps> = ({ chosen, infoModal }) => {
   const [pizza, setPizza] = React.useState<IProduto | null>(null);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+  const [progress, setProgress] = React.useState(0);
   const { id, tipo } = useParams();
 
-  const enviarMensagem = (event: React.FormEvent) => {
+  const enviarMensagem = (event: React.FormEvent<HTMLButtonElement>) => {
     const number = "+5521981734706";
     const mensagem = `Olá, gostaria de fazer um pedido de: \n ${
       chosen.charAt(0).toUpperCase() + chosen.slice(1)
-    }\n ${event.currentTarget} \n Para o endereço:  \n ${
+    }\n ${event.currentTarget.value} \n Para o endereço:  \n ${
       infoModal?.endereco
     }, ${infoModal?.numero} \n`;
     // const mensagem = `Olá, gostaria de um ${chosen}: ${target.value} Para o endereço: ${infoModal.endereco} N/Casa: ${infoModal.numero}`;
@@ -35,6 +37,7 @@ const Produto: React.FC<ProdutoProps> = ({ chosen, infoModal }) => {
         setLoading(true);
         const response = await fetch(url);
         const json = await response.json();
+        await new Promise((resolve) => setTimeout(resolve, 2000));
         setPizza(json);
       } catch (erro) {
         setError(`Um Error ocorreu ${erro}`);
@@ -42,12 +45,26 @@ const Produto: React.FC<ProdutoProps> = ({ chosen, infoModal }) => {
         setLoading(false);
       }
     }
+
+    const timer = setInterval(() => {
+      setProgress((prevProgress) => {
+        if (prevProgress >= 100) {
+          clearInterval(timer);
+          return 100;
+        }
+        return prevProgress + 10;
+      });
+    }, 200);
     fetchProduto(
       `https://magnificosdb-2debd-default-rtdb.firebaseio.com/${chosen}/${tipo}.json`
     );
+
+    return () => {
+      clearInterval(timer);
+    };
   }, [tipo, chosen]);
 
-  if (loading) return <div className="loading"></div>;
+  if (loading) return <Loading value={progress} />;
   if (error) return <p>{error}</p>;
   if (pizza === null) return null;
   return (

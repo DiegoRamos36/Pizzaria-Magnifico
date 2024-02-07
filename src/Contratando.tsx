@@ -10,6 +10,14 @@ const Contratando = () => {
   const [publicidade, setPublicidade] = React.useState("");
   const [enviado, setEnviado] = React.useState(false);
 
+  const limpar = () => {
+    setEmail("");
+    setNome("");
+    setEscolha("");
+    setExp("");
+    setPublicidade("");
+  };
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     if (!nome && !email && !escolha && !exp && !publicidade) {
@@ -55,42 +63,44 @@ const Contratando = () => {
             />
           </label>
 
-          <label>
-            <br />
-            Escolha a área de interesse:
-            <br />
-            <select
-              required
-              value={escolha}
-              onChange={({ target }) => setEscolha(target.value)}
-            >
-              <option value="" disabled>
-                escolha uma opção
-              </option>
-              <option value="Auxiliar de Cozinha">Auxiliar de Cozinha</option>
-              <option value="Pizzaiolo">Pizzaiolo</option>
-              <option value="Motoboy">Motoboy</option>
-              <option value="Atendente">Atendente</option>
-              <option value="Garçom">Garçom</option>
-              <option value="Chapeiro">Chapeiro</option>
-            </select>
-          </label>
-          <label>
-            <br />
-            Você tem experiência?
-            <br />
-            <select
-              value={exp}
-              onChange={({ target }) => setExp(target.value)}
-              required
-            >
-              <option value="" disabled>
-                escolha uma opção
-              </option>
-              <option value="Sim">Sim</option>
-              <option value="Não">Não</option>
-            </select>
-          </label>
+          <div className={styles.options}>
+            <label>
+              <br />
+              Escolha a área de interesse
+              <br />
+              <select
+                required
+                value={escolha}
+                onChange={({ target }) => setEscolha(target.value)}
+              >
+                <option value="" disabled>
+                  escolha uma opção
+                </option>
+                <option value="Auxiliar de Cozinha">Auxiliar de Cozinha</option>
+                <option value="Pizzaiolo">Pizzaiolo</option>
+                <option value="Motoboy">Motoboy</option>
+                <option value="Atendente">Atendente</option>
+                <option value="Garçom">Garçom</option>
+                <option value="Chapeiro">Chapeiro</option>
+              </select>
+            </label>
+            <label>
+              <br />
+              Você tem experiência?
+              <br />
+              <select
+                value={exp}
+                onChange={({ target }) => setExp(target.value)}
+                required
+              >
+                <option value="" disabled>
+                  escolha uma opção
+                </option>
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
+              </select>
+            </label>
+          </div>
           <label>
             <br />
             Você aceita receber informações sobre publicidade da empresa?
@@ -107,7 +117,10 @@ const Contratando = () => {
             </select>
           </label>
           <br />
-          <button type="submit">Enviar</button>
+          <div className={styles.formControls}>
+            <button type="submit">Enviar</button>
+            <p onClick={() => limpar()}>limpar</p>
+          </div>
         </form>
       )}
     </div>

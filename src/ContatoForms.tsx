@@ -53,12 +53,7 @@ const ContatoForm = () => {
           <label>
             Mensagem
             <br />
-            <input
-              className={styles.mensagem}
-              type="text"
-              value={mensagem}
-              onChange={(e) => setMensagem(e.target.value)}
-            />
+            <textarea onChange={(e) => setMensagem(e.target.value)}></textarea>
           </label>
           <br />
           <button type="submit">Enviar</button>

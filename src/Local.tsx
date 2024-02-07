@@ -97,18 +97,19 @@ const Local: React.FC<LocalProps> = ({ setInfoModal }) => {
                   onBlur={({ target }) => setEndereco(target.value)}
                 />
               </label>
-              <label>
-                <p>N°</p>
-                <input
-                  type="text"
-                  onBlur={({ target }) => setNumero(Number(target.value))}
-                />
-              </label>
+
               <label>
                 <p>Cidade</p>
                 <input
                   type="text"
                   onBlur={({ target }) => setCidade(target.value)}
+                />
+              </label>
+              <label>
+                <p>N°</p>
+                <input
+                  type="text"
+                  onBlur={({ target }) => setNumero(Number(target.value))}
                 />
               </label>
               <label>
@@ -121,10 +122,10 @@ const Local: React.FC<LocalProps> = ({ setInfoModal }) => {
                   }}
                 />
               </label>
-              <button type="submit" className={styles.confirmar}>
-                Confirmar
-              </button>
             </div>
+            <button type="submit" className={styles.confirmar}>
+              Confirmar &#x2714;
+            </button>
           </form>
         </div>
       )}

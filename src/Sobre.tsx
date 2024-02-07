@@ -1,9 +1,10 @@
-import React from 'react';
-import styles from './Sobre.module.css';
-import Head from './Head';
+import React from "react";
+import styles from "./Sobre.module.css";
+import Head from "./Head";
 const Sobre = () => {
   return (
     <section className={styles.content}>
+      <Head title={"DEM - Sobre"} description={"Sobre nós"} />
       <div className={styles.firstContent}>
         <h1>L&apos;inizio</h1>
         <p></p>

@@ -1,20 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
 .contato {
   min-height: 200vh;
   margin-top: 10vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
-
-
 .cardHeader {
   padding: 1rem;
-  background:#FFFF00;
+  background: #f3f486;
   text-align: center;
   font-size: 1.6rem;
 }
@@ -30,6 +28,10 @@
   margin-left: 2vw;
 }
 
+.social a {
+  font-family: monospace;
+  text-decoration: none;
+}
 
 .card {
   margin-top: 10vh;
@@ -37,7 +39,7 @@
   height: 30rem;
   width: 30rem;
   overflow: hidden;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   box-shadow: 0.4em 5px 5px #bbb;
 }
 
@@ -64,25 +66,22 @@
   display: flex;
   justify-content: center;
   width: 100vw;
-  
 }
 
 .cardContato {
   margin-top: 10vh;
   background: #fff;
   height: 30rem;
-  width: 40rem;
+  width: 30rem;
   overflow: hidden;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   box-shadow: 0.4em 5px 5px #bbb;
-} 
-
+}
 
 @media only screen and (max-width: 768px) {
   .contato {
     flex-direction: column;
     align-items: center;
-
   }
   .cardContato {
     width: 80%;
@@ -93,7 +92,6 @@
   }
 
   .card {
-
     width: 80%;
   }
   .card h1 {
@@ -104,4 +102,3 @@
     font-size: 2rem;
   }
 }
-
